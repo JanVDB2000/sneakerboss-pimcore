@@ -1,0 +1,100 @@
+{% extends 'template-one.html.twig' %}
+
+{% block body %}
+    <section class="mb-lg-10 mt-lg-14 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 mb-6 mx-auto">
+                    <form action="">
+                        <h1>Foto Wedstrijd</h1>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">File Upload</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <h2>Contact gegevens</h2>
+                        <hr>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Voornaam</label>
+                            <input type="text" class="form-control" id="voornaam" placeholder="Jhon">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Familienaam</label>
+                            <input type="text" class="form-control" id="achternaan" placeholder="Walker">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Geboortedatum</label>
+                            <input type="date" class="form-control" id="geboortedatum" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="">
+                            <label for="floatingInput" > Klantnummer <span class="text-danger">Optioneel CN 00-000-00</span> </label>
+                        </div>
+                        <br>
+                        <h2>Sneaker Info</h2>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Merk</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nike">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Schoenmaat</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="45 EU">
+                        </div>
+                        <button type="button" class="btn btn-primary" >Submit Formulier</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+        <div class="col mb-3">
+            <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <p class="text-muted">© 2022</p>
+        </div>
+
+        <div class="col mb-3">
+        </div>
+
+        <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+
+        <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+
+        <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

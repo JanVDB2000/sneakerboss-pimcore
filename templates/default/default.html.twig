@@ -1,0 +1,74 @@
+{% extends 'template-one.html.twig' %}
+
+{% block body %}
+
+    <div id="site">
+        <div id="logo">
+            <a href="http://www.pimcore.com/"><img src="/bundles/pimcoreadmin/img/logo-claim-gray.svg" alt="Logo claim grey" style="width: 400px;" /></a>
+            <hr />
+        </div>
+
+        {% if editmode %}
+            <div class="buttons">
+                <a target="_blank" href="https://pimcore.com/docs/6.x/Development_Documentation/Getting_Started/Installation.html">Install Sample Data / Boilerplate</a>
+                <a target="_blank" href="https://pimcore.com/docs/6.x/Development_Documentation/Getting_Started/index.html">Getting Started</a>
+            </div>
+
+            <div class="info">
+                <h2>Where can I edit some pages?</h2>
+                <p>
+                    Well, it seems that you're using the professional distribution of pimcore which doesn't include any
+                    templates / themes or contents, it's designed to start a project from scratch. If you need a jump start
+                    please consider using our sample data / boilerplate package which includes everything you need to get started.
+                </p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+        <div class="col mb-3">
+            <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <p class="text-muted">© 2022</p>
+        </div>
+
+        <div class="col mb-3">
+        </div>
+
+        <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+
+        <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+
+        <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
