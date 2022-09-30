@@ -5,7 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 mb-6 mx-auto">
-                    <form action="">
+                    <h2>
+                        {{ pimcore_input("myHeadline") }}
+                    </h2>
+
+                    {{ pimcore_areablock("content") }}
+
+                    {# <form method="post" action="">
                         <h1>Foto Wedstrijd</h1>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">File Upload</label>
@@ -43,9 +49,8 @@
                             <label for="exampleFormControlInput1" class="form-label">Schoenmaat</label>
                             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="45 EU">
                         </div>
-                        <button type="button" class="btn btn-primary" >Submit Formulier</button>
-
-                    </form>
+                        <button type="submit" class="btn btn-primary" >Submit Formulier</button>
+                    </form>#}
                 </div>
             </div>
         </div>

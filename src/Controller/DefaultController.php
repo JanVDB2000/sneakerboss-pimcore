@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends FrontendController
 {
+    private mixed $view;
+
+
     /**
      * @param Request $request
      * @return Response
@@ -24,7 +27,10 @@ class DefaultController extends FrontendController
     {
 
 
-        return $this->render('default/wedstrijd-form.html.twig');
+
+        return $this->render('default/wedstrijd-form.html.twig',[
+
+        ]);
     }
 
     /**
