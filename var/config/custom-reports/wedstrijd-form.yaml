@@ -1,0 +1,24 @@
+pimcore:
+    custom_report:
+        definitions:
+            wedstrijd-form:
+                name: wedstrijd-form
+                sql: ''
+                dataSourceConfig: {  }
+                columnConfiguration: {  }
+                niceName: ''
+                group: ''
+                groupIconClass: ''
+                iconClass: ''
+                menuShortcut: true
+                reportClass: ''
+                chartType: ''
+                pieColumn: ''
+                pieLabelColumn: ''
+                xAxis: ''
+                yAxis: {  }
+                modificationDate: 1664791416
+                creationDate: 1664791416
+                shareGlobally: true
+                sharedUserNames: {  }
+                sharedRoleNames: {  }

@@ -29,6 +29,7 @@ parameters:
     # graphviz
     #pimcore_executable_dot: /usr/bin/dot
 
+
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -48,8 +49,6 @@ services:
         resource: '../src/Controller'
         public: true
         tags: [ 'controller.service_arguments' ]
-
-
     #
     # COMMANDS
     #

@@ -9,6 +9,8 @@
   },
   "require": {
     "dachcom-digital/formbuilder": "^4.1",
+    "knplabs/knp-paginator-bundle": "^5.9",
+    "pimcore/frontend-permission-toolkit-bundle": "^1.5",
     "pimcore/pimcore": "^10.5",
     "symfony/form": "^5.2.0"
   },

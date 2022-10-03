@@ -31,19 +31,24 @@
                             <td>{{ wedstrijdform.voornaam }}</td>
                             <td>{{ wedstrijdform.achternaam }}</td>
                             <td>{{ wedstrijdform.email }}</td>
-                            <td>{{ wedstrijdform.klantnummer }}</td>
+                            <td>
+                                {% if wedstrijdform.klantnummer %}
+                                   {{ wedstrijdform.klantnummer }}
+                                {% else %}
+                                    Geen klantenummer
+                                {% endif %}
+                            </td>
                             <td>{{ wedstrijdform.geboortedatum }}</td>
                             <td>{{ wedstrijdform.merk }}</td>
                             <td>{{ wedstrijdform.schoenmaat }}</td>
                             <td>
-                                {% if  wedstrijdform.afbeelding %}
-                                    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ wedstrijdform.afbeelding.thumbnail('wedstrijdform')}}" alt="">
-
+                                <a href="{{ wedstrijdform.url_file }}" target="_blank"> Click here</a>
+                                {#{% if  wedstrijdform.url_file %}
+                                    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ wedstrijdform.url_file.thumbnail('wedstrijdform')}}" alt="">
                                 {% else %}
                                     <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://via.placeholder.com/140x140" alt="">
-                                {% endif %}
+                                {% endif %}#}
                             </td>
-
                         </tr>
                         {% endfor %}
                         </tbody>

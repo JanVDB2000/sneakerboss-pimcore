@@ -13,6 +13,7 @@
  * - klantnummer [input]
  * - merk [input]
  * - schoenmaat [input]
+ * - url_file [input]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -21,7 +22,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'WedstrijdForm',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1664538508,
+   'modificationDate' => 1664784587,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -91,7 +92,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'width' => '',
              'height' => '',
-             'uploadPath' => '/wedstrijd foto\'s',
+             'uploadPath' => '',
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
@@ -291,6 +292,37 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => false,
+             'showCharCount' => false,
+             'defaultValueGenerator' => '',
+          )),
+          8 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'url_file',
+             'title' => 'Url_file',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'input',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => true,
              'blockedVarsForExport' => 
             array (
             ),
