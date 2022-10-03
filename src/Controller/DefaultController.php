@@ -41,8 +41,6 @@ class DefaultController extends FrontendController
 
         $wedstrijdforms = DataObject\WedstrijdForm::getList();
 
-
-
         return $this->render('default/wedstrijd-list.html.twig', [
             'wedstrijdforms'=> $wedstrijdforms,
         ]);

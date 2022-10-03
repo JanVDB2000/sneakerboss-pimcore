@@ -3,16 +3,17 @@
 {% block body %}
 
     <div id="site">
-        <div id="logo">
+        <div id="logo" class="mx-auto img-fluid">
             <a href="http://www.pimcore.com/"><img src="/bundles/pimcoreadmin/img/logo-claim-gray.svg" alt="Logo claim grey" style="width: 400px;" /></a>
-            <hr />
         </div>
 
         {% if editmode %}
-            <div class="buttons">
-                <a target="_blank" href="https://pimcore.com/docs/6.x/Development_Documentation/Getting_Started/Installation.html">Install Sample Data / Boilerplate</a>
-                <a target="_blank" href="https://pimcore.com/docs/6.x/Development_Documentation/Getting_Started/index.html">Getting Started</a>
-            </div>
+
+
+                <a target="_blank" class="btn-danger" href="https://pimcore.com/docs/6.x/Development_Documentation/Getting_Started/Installation.html">Install Sample Data / Boilerplate</a>
+
+                <a target="_blank" class="btn-danger" href="https://pimcore.com/docs/6.x/Development_Documentation/Getting_Started/index.html">Getting Started</a>
+
 
             <div class="info">
                 <h2>Where can I edit some pages?</h2>

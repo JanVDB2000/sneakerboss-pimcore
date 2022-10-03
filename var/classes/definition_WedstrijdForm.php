@@ -5,7 +5,7 @@
  * Variants: no
  *
  * Fields Summary:
- * - afbeelding [image]
+ * - url_file [input]
  * - voornaam [input]
  * - achternaam [input]
  * - geboortedatum [date]
@@ -13,7 +13,6 @@
  * - klantnummer [input]
  * - merk [input]
  * - schoenmaat [input]
- * - url_file [input]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -22,7 +21,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'WedstrijdForm',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1664784587,
+   'modificationDate' => 1664804149,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -71,9 +70,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'afbeelding',
-             'title' => 'Afbeelding',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'url_file',
+             'title' => 'Url_file',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -82,7 +81,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'image',
+             'fieldtype' => 'input',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -91,8 +90,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'width' => '',
-             'height' => '',
-             'uploadPath' => '',
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => false,
+             'showCharCount' => false,
+             'defaultValueGenerator' => '',
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
@@ -306,37 +312,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'showCharCount' => false,
              'defaultValueGenerator' => '',
           )),
-          8 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'url_file',
-             'title' => 'Url_file',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'input',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => true,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'width' => '',
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
-             'defaultValueGenerator' => '',
-          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -396,6 +371,32 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
+    0 => 
+    Pimcore\Model\DataObject\ClassDefinition\Data\ExternalImage::__set_state(array(
+       'name' => 'test',
+       'title' => 'Test',
+       'tooltip' => '',
+       'mandatory' => false,
+       'noteditable' => false,
+       'index' => false,
+       'locked' => false,
+       'style' => '',
+       'permissions' => NULL,
+       'datatype' => 'data',
+       'fieldtype' => 'externalImage',
+       'relationType' => false,
+       'invisible' => false,
+       'visibleGridView' => false,
+       'visibleSearch' => false,
+       'blockedVarsForExport' => 
+      array (
+      ),
+       'previewWidth' => NULL,
+       'inputWidth' => NULL,
+       'previewHeight' => NULL,
+       'queryColumnType' => 'longtext',
+       'columnType' => 'longtext',
+    )),
   ),
    'blockedVarsForExport' => 
   array (
