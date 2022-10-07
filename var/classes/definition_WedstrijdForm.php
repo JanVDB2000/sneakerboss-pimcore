@@ -13,6 +13,7 @@
  * - klantnummer [input]
  * - merk [input]
  * - schoenmaat [input]
+ * - afbeelding [image]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -21,7 +22,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'WedstrijdForm',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1664804149,
+   'modificationDate' => 1664880355,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -312,6 +313,30 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'showCharCount' => false,
              'defaultValueGenerator' => '',
           )),
+          8 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
+             'name' => 'afbeelding',
+             'title' => 'Afbeelding',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'image',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'height' => '',
+             'uploadPath' => '/wedstrijd foto\'s',
+          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -371,32 +396,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
-    0 => 
-    Pimcore\Model\DataObject\ClassDefinition\Data\ExternalImage::__set_state(array(
-       'name' => 'test',
-       'title' => 'Test',
-       'tooltip' => '',
-       'mandatory' => false,
-       'noteditable' => false,
-       'index' => false,
-       'locked' => false,
-       'style' => '',
-       'permissions' => NULL,
-       'datatype' => 'data',
-       'fieldtype' => 'externalImage',
-       'relationType' => false,
-       'invisible' => false,
-       'visibleGridView' => false,
-       'visibleSearch' => false,
-       'blockedVarsForExport' => 
-      array (
-      ),
-       'previewWidth' => NULL,
-       'inputWidth' => NULL,
-       'previewHeight' => NULL,
-       'queryColumnType' => 'longtext',
-       'columnType' => 'longtext',
-    )),
   ),
    'blockedVarsForExport' => 
   array (
