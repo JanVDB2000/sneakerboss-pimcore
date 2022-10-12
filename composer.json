@@ -12,11 +12,12 @@
     "knplabs/knp-paginator-bundle": "^5.9",
     "pimcore/frontend-permission-toolkit-bundle": "^1.5",
     "pimcore/pimcore": "^10.5",
-    "symfony/form": "^5.2.0"
+    "symfony/form": "^5.2.0",
+    "symfonycasts/verify-email-bundle": "^1.12"
   },
   "require-dev": {
     "codeception/codeception": "^4.1.12",
-    "symfony/maker-bundle": "^1.46"
+    "symfony/maker-bundle": "^1.47"
   },
   "suggest": {
     "pimcore/data-hub": "Universal data interface for GraphQL, CSV and other formats"

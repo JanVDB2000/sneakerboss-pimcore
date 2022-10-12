@@ -8,7 +8,8 @@
                     <h2>
                         {{ pimcore_input("myHeadline") }}
                     </h2>
-                    {{ form(form) }}
+
+                    {{ pimcore_areablock("content") }}
 
                     {# <form method="post" action="">
                         <h1>Foto Wedstrijd</h1>
@@ -28,7 +29,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Geboortedatum</label>
-                            <input type="date" class="form-control" id="geboortedatum">
+                            <input type="date" class="form-control" id="geboortedatum" placeholder="name@example.com">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Email address</label>
