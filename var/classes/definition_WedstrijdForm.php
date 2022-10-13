@@ -22,7 +22,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'WedstrijdForm',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1664880355,
+   'modificationDate' => 1665649748,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -337,6 +337,31 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'height' => '',
              'uploadPath' => '/wedstrijd foto\'s',
           )),
+          9 => 
+          Pimcore\Model\DataObject\ClassDefinition\Layout\Button::__set_state(array(
+             'name' => 'Layout',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => NULL,
+             'width' => '',
+             'height' => '',
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => NULL,
+             'datatype' => 'layout',
+             'permissions' => NULL,
+             'children' => 
+            array (
+            ),
+             'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'fieldtype' => 'button',
+             'handler' => '',
+             'text' => '',
+             'icon' => '',
+          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -364,7 +389,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'icon' => '/bundles/pimcoreadmin/img/flat-color-icons/comments.svg',
    'previewUrl' => '',
    'group' => '',
-   'showAppLoggerTab' => false,
+   'showAppLoggerTab' => true,
    'linkGeneratorReference' => '',
    'previewGeneratorReference' => '',
    'compositeIndices' => 

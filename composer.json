@@ -10,8 +10,10 @@
   "require": {
     "dachcom-digital/formbuilder": "^4.1",
     "knplabs/knp-paginator-bundle": "^5.9",
+    "pimcore/customer-management-framework-bundle": "^3.3",
     "pimcore/frontend-permission-toolkit-bundle": "^1.5",
     "pimcore/pimcore": "^10.5",
+    "spotbot2k/pimcore-simple-forms": "^1.2",
     "symfony/form": "^5.2.0",
     "symfonycasts/verify-email-bundle": "^1.12"
   },
