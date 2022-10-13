@@ -99,10 +99,6 @@ class WedstrijdFormController extends FrontendController
             $email = (new Email())
                 ->from('hello@example.com')
                 ->to('you@example.com')
-                //->cc('cc@example.com')
-                //->bcc('bcc@example.com')
-                //->replyTo('fabien@example.com')
-                //->priority(Email::PRIORITY_HIGH)
                 ->subject('Time for Wedstrijd')
                 ->text('Sending emails is fun again!')
                 ->html('<a href="http://127.0.0.1/check-mail-form/'. $linkregistration->getUrl_confirmation().'">Click voor wedstrijd bevestingen</a>');
