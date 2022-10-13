@@ -5,7 +5,7 @@
  * Variants: no
  *
  * Fields Summary:
- * - url_confirmation [urlSlug]
+ * - url_confirmation [input]
  * - WedstrijdFormLink [manyToOneRelation]
  * - check_confirmation [checkbox]
  */
@@ -16,7 +16,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'WedstrijdRegistration',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1665660006,
+   'modificationDate' => 1665664874,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -65,7 +65,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\UrlSlug::__set_state(array(
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'url_confirmation',
              'title' => 'Url _confirmation',
              'tooltip' => '',
@@ -76,7 +76,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'urlSlug',
+             'fieldtype' => 'input',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -85,11 +85,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'width' => '',
-             'domainLabelWidth' => NULL,
-             'action' => '',
-             'availableSites' => 
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
             array (
             ),
+             'unique' => false,
+             'showCharCount' => false,
+             'defaultValueGenerator' => '',
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(

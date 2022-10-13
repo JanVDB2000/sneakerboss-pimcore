@@ -14,6 +14,7 @@
  * - merk [input]
  * - schoenmaat [input]
  * - afbeelding [image]
+ * - WedstrijdRegistrationLink [manyToOneRelation]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -22,7 +23,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'WedstrijdForm',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1665649748,
+   'modificationDate' => 1665667262,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -338,29 +339,44 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'uploadPath' => '/wedstrijd foto\'s',
           )),
           9 => 
-          Pimcore\Model\DataObject\ClassDefinition\Layout\Button::__set_state(array(
-             'name' => 'Layout',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => NULL,
-             'width' => '',
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => NULL,
-             'datatype' => 'layout',
-             'permissions' => NULL,
-             'children' => 
-            array (
-            ),
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+             'name' => 'WedstrijdRegistrationLink',
+             'title' => 'Wedstrijd Registration  link',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
              'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'manyToOneRelation',
+             'relationType' => true,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => true,
              'blockedVarsForExport' => 
             array (
             ),
-             'fieldtype' => 'button',
-             'handler' => '',
-             'text' => '',
-             'icon' => '',
+             'classes' => 
+            array (
+              0 => 
+              array (
+                'classes' => 'WedstrijdRegistration',
+              ),
+            ),
+             'pathFormatterClass' => '',
+             'width' => '',
+             'assetUploadPath' => '',
+             'objectsAllowed' => true,
+             'assetsAllowed' => false,
+             'assetTypes' => 
+            array (
+            ),
+             'documentsAllowed' => false,
+             'documentTypes' => 
+            array (
+            ),
           )),
         ),
          'locked' => false,
