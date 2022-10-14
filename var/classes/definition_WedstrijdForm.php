@@ -23,7 +23,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'WedstrijdForm',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1665667262,
+   'modificationDate' => 1665731372,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',

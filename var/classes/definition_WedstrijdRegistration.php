@@ -7,7 +7,7 @@
  * Fields Summary:
  * - url_confirmation [input]
  * - WedstrijdFormLink [manyToOneRelation]
- * - check_confirmation [checkbox]
+ * - check_confirmation [booleanSelect]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -16,7 +16,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'WedstrijdRegistration',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1665664874,
+   'modificationDate' => 1665672069,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -136,7 +136,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+          Pimcore\Model\DataObject\ClassDefinition\Data\BooleanSelect::__set_state(array(
              'name' => 'check_confirmation',
              'title' => 'Check_confirmation',
              'tooltip' => '',
@@ -147,7 +147,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'checkbox',
+             'fieldtype' => 'booleanSelect',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -155,8 +155,28 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValue' => NULL,
-             'defaultValueGenerator' => '',
+             'yesLabel' => 'true',
+             'noLabel' => 'false',
+             'emptyLabel' => '',
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => '',
+                'value' => 0,
+              ),
+              1 => 
+              array (
+                'key' => 'true',
+                'value' => 1,
+              ),
+              2 => 
+              array (
+                'key' => 'false',
+                'value' => -1,
+              ),
+            ),
+             'width' => '',
           )),
         ),
          'locked' => false,

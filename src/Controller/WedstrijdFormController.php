@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use Carbon\Carbon;
 use Pimcore\Controller\FrontendController;
 use Pimcore\Mail;
 use Pimcore\Model\Asset;
@@ -28,7 +29,7 @@ class WedstrijdFormController extends FrontendController
 
 
 
-    public function generateRandomString($length = 25): string
+    public function generateRandomString($length): string
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -40,12 +41,14 @@ class WedstrijdFormController extends FrontendController
     }
 
 
-    public function SlugChecker($slugURL, $slugObject){
-        foreach($slugObject as $check){
-            if ($check->getUrl_confirmation() == $slugURL){
+    public function SlugChecker($slugURL, $slugObject): bool
+    {
+        /*foreach($slugObject as $check){*/
+            if ($slugObject->getUrl_confirmation() == $slugURL){
                 return true;
             }
-        }
+      /*  }*/
+        return false;
     }
 
 
@@ -61,49 +64,64 @@ class WedstrijdFormController extends FrontendController
     public function WestrijdForm(Request $request,MailerInterface $mailer): Response
     {
         // creates a task object and initializes some data for this example
-        $wedstrijdform = new DataObject\WedstrijdForm();
+
         // user wedstrijd info
-        $form = $this->createFormBuilder($wedstrijdform)
-/*            ->add('Afbeelding', FileType::class, ['attr' => ['class' => 'form-control']])*/
+
+
+
+
+        $form = $this->createFormBuilder()
+            ->add('Afbeelding', FileType::class, ['attr' => ['class' => 'form-control']])
             ->add('Voornaam', TextType::class , ['attr' => ['class' => 'form-control']])
             ->add('Achternaam', TextType::class, ['attr' => ['class' => 'form-control']])
-            /*->add('Geboortedatum', dateType::class, [  'widget' => 'choice','input'  => 'datetime_immutable'])*/
+            ->add('Geboortedatum',DateType::class,['attr' => ['class' => 'form-control']])
             ->add('Email', TextType::class,  ['attr' => ['class' => 'form-control']])
-            ->add('Klantnummer', TextType::class, [  'label' => 'Klantnummer Optioneel CN 00-000-00','attr' => ['class' => 'form-control'],])
+            ->add('Klantnummer', TextType::class, ['required' => false,'label' => 'Klantnummer Optioneel CN 00-000-00','attr' => ['class' => 'form-control'],])
             ->add('Merk', TextType::class, ['attr' => ['class' => 'form-control']])
             ->add('Schoenmaat', TextType::class, ['attr' => ['class' => 'form-control'],'required' => true,])
             ->add('save', SubmitType::class, ['label' => 'Submit Formulier', 'attr' => ['class' => 'btn btn-primary mt-3'],])
             ->getForm();
 
+
+
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $registration = $form->getData();
+
+
+            $newAsset = new Asset\Image();
+
+            $newAsset->setParentId(2);
+            $newAsset->setData($form->get('Afbeelding')->getData());
+            $newAsset->setFilename($this->generateRandomString(10).'.png');
+            $newAsset->save();
+
+            $registration['Afbeelding'] = $newAsset;
+            $registration['Geboortedatum'] = Carbon::parse($registration['Geboortedatum']);
+
+           $registrationPimcore = DataObject\WedstrijdForm::create($registration)->setParentId(2)->setKey('form'.$registration['Email'])->save();
 
 
             $linkregistration = new DataObject\WedstrijdRegistration();
 
-            $registration = $form->getData();
-
-/*            Asset::create(2)->setData($registration->getAfbeelding())->save();*/
-
-
-            $registration->setParentId(2)->setKey('form'.$registration->getEmail())->save();
-
            $linkregistration
-               ->setUrl_confirmation($this->generateRandomString())
+               ->setUrl_confirmation($this->generateRandomString(25))
                ->setParentId(62)
                ->setKey($linkregistration->getUrl_confirmation())
                ->setPublished(true)
-               ->setWedstrijdFormLink($registration)
+               ->setWedstrijdFormLink($registrationPimcore)
                ->save();
 
+           //send mail + link voor bevestingen
             $email = (new Email())
-                ->from('hello@example.com')
-                ->to('you@example.com')
+                ->from('wedstrijd@sneakerboss.com')
+                ->to($registrationPimcore->getEmail())
                 ->subject('Time for Wedstrijd')
                 ->text('Sending emails is fun again!')
                 ->html('<a href="http://127.0.0.1/check-mail-form/'. $linkregistration->getUrl_confirmation().'">Click voor wedstrijd bevestingen</a>');
-
             $mailer->send($email);
+
 
             return $this->redirect('/');
         }
@@ -121,26 +139,26 @@ class WedstrijdFormController extends FrontendController
     public function WestrijdFormCheck(Request $request , string $slug )
     {
         // creates a task object and initializes some data for this example
-        $Slugcheck = DataObject\WedstrijdRegistration::getList();
+
+
+        $Slugcheck = DataObject\WedstrijdRegistration::getByUrl_confirmation($slug,1);
 
         if ($this->SlugChecker($slug, $Slugcheck)){
 
-            $wedstrijdFormCheck = new DataObject\WedstrijdRegistration();
-
             // user wedstrijd info
-            $form = $this->createFormBuilder($wedstrijdFormCheck)
+            $form = $this->createFormBuilder($Slugcheck)
                 ->add('save', SubmitType::class, ['label' => 'Submit Formulier', 'attr' => ['class' => 'btn btn-primary mt-3'],])
                 ->getForm();
 
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
 
-                $registration = $form->getData();
 
-                DataObject\WedstrijdForm::getByWedstrijdRegistrationLink($registration)->setPublished(true)->save();
+                \Pimcore\Model\DataObject::setHideUnpublished(false);
+                $Slugcheck->getWedstrijdFormLink()->setPublished(true)->save();
+                \Pimcore\Model\DataObject::setHideUnpublished(true);
 
-
-                return $this->redirectToRoute('/');
+                return $this->redirect('/');
             }
 
             return $this->render('default/wedstrijd-form-bevestig.html.twig',[
