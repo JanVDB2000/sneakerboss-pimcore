@@ -45,8 +45,9 @@ class WedstrijdFormController extends FrontendController
     {
         /*foreach($slugObject as $check){*/
             if ($slugObject->getUrl_confirmation() == $slugURL){
-                return true;
-            }
+            return true;
+        }
+
       /*  }*/
         return false;
     }
@@ -108,7 +109,7 @@ class WedstrijdFormController extends FrontendController
            $linkregistration
                ->setUrl_confirmation($this->generateRandomString(25))
                ->setParentId(62)
-               ->setKey($linkregistration->getUrl_confirmation())
+               ->setKey('url_code : '.$linkregistration->getUrl_confirmation())
                ->setPublished(true)
                ->setWedstrijdFormLink($registrationPimcore)
                ->save();
@@ -136,18 +137,22 @@ class WedstrijdFormController extends FrontendController
      * @throws \Exception
      */
     #[Route('/check-mail-form/{slug}', name: 'WestrijdFormCheck')]
-    public function WestrijdFormCheck(Request $request , string $slug )
+    public function WestrijdFormCheck(Request $request , string $slug ,MailerInterface $mailer)
     {
         // creates a task object and initializes some data for this example
 
 
         $Slugcheck = DataObject\WedstrijdRegistration::getByUrl_confirmation($slug,1);
 
+        if ($Slugcheck == null){
+            return $this->redirect('/');
+        }
+
         if ($this->SlugChecker($slug, $Slugcheck)){
 
             // user wedstrijd info
             $form = $this->createFormBuilder($Slugcheck)
-                ->add('save', SubmitType::class, ['label' => 'Submit Formulier', 'attr' => ['class' => 'btn btn-primary mt-3'],])
+                ->add('save', SubmitType::class, ['label' => 'Bevestige Webstrijd Deelnamen', 'attr' => ['class' => 'btn btn-primary mt-3'],])
                 ->getForm();
 
             $form->handleRequest($request);
@@ -157,6 +162,18 @@ class WedstrijdFormController extends FrontendController
                 \Pimcore\Model\DataObject::setHideUnpublished(false);
                 $Slugcheck->getWedstrijdFormLink()->setPublished(true)->save();
                 \Pimcore\Model\DataObject::setHideUnpublished(true);
+
+                $date = date("F j, Y, g:i a");
+
+                $email = (new Email())
+                    ->from('wedstrijd@sneakerboss.com')
+                    ->to('admin@sneakerboss.com')
+                    ->subject('Nieuwe deelnamen Wedstrijd')
+                    ->text('Bekijk de  inschrijving')
+                    ->html(' <p>Bekijk :</p><a href="http://127.0.0.1/wedstrijd-lijst">Nieuwe deelnamen</a>');
+                $mailer->send($email);
+
+                $Slugcheck->setKey('Gebruikt op '. $date)->setPublished(false)->save();
 
                 return $this->redirect('/');
             }

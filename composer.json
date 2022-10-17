@@ -10,17 +10,20 @@
   "require": {
     "dachcom-digital/formbuilder": "^4.1",
     "friendsofsymfony/user-bundle": "^3.0",
+    "hwi/oauth-bundle": "^1.4",
     "knplabs/knp-paginator-bundle": "^5.9",
     "pimcore/customer-management-framework-bundle": "^3.3",
     "pimcore/frontend-permission-toolkit-bundle": "^1.5",
     "pimcore/pimcore": "^10.5",
     "spotbot2k/pimcore-simple-forms": "^1.2",
     "symfony/form": "^5.2.0",
+    "symfony/security-bundle": "^5.4.0",
     "symfonycasts/verify-email-bundle": "^1.12"
   },
   "require-dev": {
     "codeception/codeception": "^4.1.12",
-    "symfony/maker-bundle": "^1.47"
+    "symfony/maker-bundle": "^1.47",
+    "symfony/profiler-pack": "^1.0"
   },
   "suggest": {
     "pimcore/data-hub": "Universal data interface for GraphQL, CSV and other formats"

@@ -1,14 +1,22 @@
 security:
     enable_authenticator_manager: true
 
+    password_hashers:
+        App\Security\User:
+            algorithm: auto
+
     providers:
         pimcore_admin:
             id: Pimcore\Bundle\AdminBundle\Security\User\UserProvider
-
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+            security: true
 
         # Pimcore WebDAV HTTP basic // DO NOT CHANGE!
         pimcore_admin_webdav:
