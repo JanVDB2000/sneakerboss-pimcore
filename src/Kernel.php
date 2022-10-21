@@ -15,6 +15,7 @@
 
 namespace App;
 
+use FOS\UserBundle\FOSUserBundle;
 use Pimcore\HttpKernel\BundleCollection\BundleCollection;
 use Pimcore\Kernel as PimcoreKernel;
 
@@ -31,5 +32,7 @@ class Kernel extends PimcoreKernel
         if (class_exists('\\AppBundle\\AppBundle')) {
             $collection->addBundle(new \AppBundle\AppBundle);
         }
+        /*$collection->addBundle(new FOSUserBundle(), 10);*/
     }
+
 }

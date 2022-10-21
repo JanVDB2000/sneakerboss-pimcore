@@ -5,11 +5,8 @@ namespace App\Controller;
 
 use Carbon\Carbon;
 use Pimcore\Controller\FrontendController;
-use Pimcore\Mail;
 use Pimcore\Model\Asset;
 use Pimcore\Model\DataObject;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -53,13 +50,11 @@ class WedstrijdFormController extends FrontendController
     }
 
 
-
-
-
     /**
      * @param Request $request
      * @return Response
      * @throws TransportExceptionInterface
+     * @throws \Exception
      */
 
     public function WestrijdForm(Request $request,MailerInterface $mailer): Response
@@ -95,7 +90,7 @@ class WedstrijdFormController extends FrontendController
 
             $newAsset->setParentId(2);
             $newAsset->setData($form->get('Afbeelding')->getData());
-            $newAsset->setFilename($this->generateRandomString(10).'.png');
+            $newAsset->setFilename($form->get('Afbeelding')->getData()->getClientOriginalName());
             $newAsset->save();
 
             $registration['Afbeelding'] = $newAsset;
