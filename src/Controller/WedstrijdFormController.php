@@ -70,7 +70,7 @@ class WedstrijdFormController extends FrontendController
             ->add('Afbeelding', FileType::class, ['attr' => ['class' => 'form-control']])
             ->add('Voornaam', TextType::class , ['attr' => ['class' => 'form-control']])
             ->add('Achternaam', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('Geboortedatum',DateType::class,['attr' => ['class' => 'form-control']])
+            ->add('Geboortedatum',DateType::class,['years' => range(1920, date('Y')),'attr' => ['class' => 'form-control']])
             ->add('Email', TextType::class,  ['attr' => ['class' => 'form-control']])
             ->add('Klantnummer', TextType::class, ['required' => false,'label' => 'Klantnummer Optioneel CN 00-000-00','attr' => ['class' => 'form-control'],])
             ->add('Merk', TextType::class, ['attr' => ['class' => 'form-control']])
@@ -89,7 +89,9 @@ class WedstrijdFormController extends FrontendController
             $newAsset = new Asset\Image();
 
             $newAsset->setParentId(2);
-            $newAsset->setData($form->get('Afbeelding')->getData());
+
+            $newAsset->setData($form->get('Afbeelding')->getData()->getContent());
+
             $newAsset->setFilename($form->get('Afbeelding')->getData()->getClientOriginalName());
             $newAsset->save();
 
