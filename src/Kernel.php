@@ -32,7 +32,7 @@ class Kernel extends PimcoreKernel
         if (class_exists('\\AppBundle\\AppBundle')) {
             $collection->addBundle(new \AppBundle\AppBundle);
         }
-        /*$collection->addBundle(new FOSUserBundle(), 10);*/
+        /*$collection->addBundle(new FOSUserBundle(), 11);*/
     }
 
 }

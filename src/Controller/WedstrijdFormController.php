@@ -40,12 +40,9 @@ class WedstrijdFormController extends FrontendController
 
     public function SlugChecker($slugURL, $slugObject): bool
     {
-        /*foreach($slugObject as $check){*/
-            if ($slugObject->getUrl_confirmation() == $slugURL){
+        if ($slugObject->getUrl_confirmation() == $slugURL){
             return true;
         }
-
-      /*  }*/
         return false;
     }
 
@@ -57,14 +54,13 @@ class WedstrijdFormController extends FrontendController
      * @throws \Exception
      */
 
+
+
     public function WestrijdForm(Request $request,MailerInterface $mailer): Response
     {
         // creates a task object and initializes some data for this example
 
         // user wedstrijd info
-
-
-
 
         $form = $this->createFormBuilder()
             ->add('Afbeelding', FileType::class, ['attr' => ['class' => 'form-control']])

@@ -20,11 +20,11 @@
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '8',
-   'name' => 'UserFrontEnd',
+   'id' => '10',
+   'name' => 'test',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1669380140,
+   'modificationDate' => 1669375921,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -322,7 +322,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'width' => '',
                  'height' => '',
                  'maxItems' => NULL,
-                 'visibleFields' => 'id,key,RoleName,published,RoleIcon,RechtenView,RechtenCrud',
+                 'visibleFields' => 'id,key,RoleName,KanLijstLezen,published,RoleIcon',
                  'allowToCreateNewObject' => false,
                  'optimizedAdminLoading' => false,
                  'enableTextSelection' => false,
@@ -516,39 +516,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
-    0 => 
-    Pimcore\Model\DataObject\ClassDefinition\Data\Multiselect::__set_state(array(
-       'name' => 'test',
-       'title' => 'Test',
-       'tooltip' => '',
-       'mandatory' => false,
-       'noteditable' => false,
-       'index' => false,
-       'locked' => false,
-       'style' => '',
-       'permissions' => NULL,
-       'datatype' => 'data',
-       'fieldtype' => 'multiselect',
-       'relationType' => false,
-       'invisible' => false,
-       'visibleGridView' => false,
-       'visibleSearch' => false,
-       'blockedVarsForExport' => 
-      array (
-      ),
-       'options' => 
-      array (
-      ),
-       'width' => '',
-       'height' => '',
-       'maxItems' => NULL,
-       'renderType' => 'list',
-       'optionsProviderClass' => '',
-       'optionsProviderData' => '',
-       'queryColumnType' => 'text',
-       'columnType' => 'text',
-       'dynamicOptions' => false,
-    )),
   ),
    'blockedVarsForExport' => 
   array (
