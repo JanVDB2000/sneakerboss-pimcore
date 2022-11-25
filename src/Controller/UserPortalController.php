@@ -34,6 +34,12 @@ class UserPortalController extends FrontendController
     public function LoginPortal(Request $request): Response
     {
 
+        $form = $this->createFormBuilder()
+            ->add('Email', TextType::class,  ['attr' => ['class' => 'form-control']])
+            ->add('PassWord', TextType::class,  ['attr' => ['class' => 'form-control']])
+            ->add('Login', SubmitType::class, ['label' => 'Login', 'attr' => ['class' => 'btn btn-primary mt-3'],])
+            ->getForm();
+
 
 
         return $this->render('default/user-portal.html.twig');
